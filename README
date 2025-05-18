@@ -1,0 +1,7 @@
+echo "# packaging-platform" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/nickdadiala/packaging-platform.git
+git push -u origin main
