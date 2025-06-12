@@ -11,4 +11,6 @@ git push -u origin main
 # Name the folder and Run in through VScode. Open the folder and look for Readme.
 
 # to create folder template (_source,_build and _Output) Run "New-app-folder.ps1"
-# 
+# It will prompt for credential and use your username and password
+
+# Enter your credential it will prompt for app name use the name "no-whitespaces" Example: ArcGiSPro.
