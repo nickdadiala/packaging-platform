@@ -1,0 +1,26 @@
+# Define setup files
+$setupExe = ".\setup.exe"
+$silentProps = ".\silent.properties"
+$packageDir = ".\InstallationPackage"
+
+# Create package directory if it doesn't exist
+if (-not (Test-Path $packageDir)) {
+    New-Item -ItemType Directory -Path $packageDir
+}
+
+# Copy necessary files to package directory
+Copy-Item $setupExe -Destination $packageDir
+Copy-Item $silentProps -Destination $packageDir
+
+Write-Output "Packaging complete. Ready for silent installation."
+
+# Run setup with silent installation parameters
+function test {
+    $installCommand ='install cmd'
+     Write-Output $installCommand
+}
+$installCommand = "$setupExe /silent /config=$silentProps"
+Write-Output "Starting silent installation..."
+Start-Process -FilePath $setupExe -ArgumentList "/silent /config=$silentProps" -Wait -NoNewWindow
+
+Write-Output "Installation completed successfully."
