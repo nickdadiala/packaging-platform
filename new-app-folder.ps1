@@ -1,5 +1,5 @@
 $ErrorActionPreference = "Stop"
-$sourceTemplate = ".\appliaction-template"
+$sourceTemplate = ".\application-template"
 
 if(-not (Test-path $sourceTemplate -PathType Container)) {
 
