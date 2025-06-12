@@ -14,3 +14,9 @@ git push -u origin main
 # It will prompt for credential and use your username and password
 
 # Enter your credential it will prompt for app name use the name "no-whitespaces" Example: ArcGiSPro.
+# Start writing your script for package you wish to install. 
+
+# Or you can use the Template PS script for package you are going to create. 
+# "Install-PreReqs" for installing your prereqs through PS .
+
+# Default script for installing Pre-Reqs without folder path - "INstallscriptNOFolderPAth.ps1"
