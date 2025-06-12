@@ -5,3 +5,10 @@ git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/nickdadiala/packaging-platform.git
 git push -u origin main
+# To start packagoing work First Read the readme and follow  instrcution to build package.
+# create folder in local C:\temp\repo and clone the repository.
+
+# Name the folder and Run in through VScode. Open the folder and look for Readme.
+
+# to create folder template (_source,_build and _Output) Run "New-app-folder.ps1"
+# 

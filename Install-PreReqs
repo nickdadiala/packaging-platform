@@ -13,9 +13,20 @@ foreach($prereqs in $PreRequities){
    } 
 } 
 Write-Output "All PreRequisties are installed" 
-#Define install main package now
+#Define install main package declare variables
+function test
+{
+  $mainpackagePath = 'path to main package'
+    Write-Output  $mainpackagePath
+}
+function test
+{
+ $mainpackageArgs = 'params for package'
+  Write-Output $mainpackageArgs
+}
+# install main package
 $mainpackagePath ="C:\path\to\Installer.exe"
-$mainpackageArgs =" /quiet /default"
+$mainpackageArgs ="/quiet /default"
 
 Write-Output "Installing main package"
 Start-process msiexec /i -ArgumentList \`"installer.msi`" /quiet -wait
