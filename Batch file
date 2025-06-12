@@ -1,0 +1,25 @@
+@echo off
+
+SET INSTALLER="ArcGISPro_XX_XX.exe"  REM Replace with actual installer name
+SET INSTALLDIR="C:\Program Files\ArcGIS\Pro"
+SET LOGFILE="C:\ArcGIS_Install.log"
+
+echo Installing ArcGIS Pro silently...
+%INSTALLER% /qb /norestart INSTALLDIR=%INSTALLDIR% /log %LOGFILE%
+
+
+REM === Activate License via ArcGIS Pro CLI ===
+if exist "%LICENSE_FILE%" (
+    echo Activating license...
+    "C:\Program Files\ArcGIS\Pro\bin\SoftwareAuthorization.exe" /s /ver 3.2 /lif "%LICENSE_FILE%" > "%LICENSE_LOG%"
+    
+    REM Check if licensing was successful
+    findstr /C:"Authorization process complete." "%LICENSE_LOG%"
+    if %ERRORLEVEL% NEQ 0 (
+        echo License activation failed! Check %LICENSE_LOG%
+        exit /b 1
+    )
+    echo License applied successfully!
+) ELSE (
+    echo License file not found! Skipping license activation.
+)
