@@ -1,0 +1,14 @@
+param (
+    [Parameter(Mandatory=$true)]
+    [ValidateNotNullOrEmpty()]
+    [string]$FilePath
+)
+
+# Validate if the file exists
+if (-Not (Test-Path -Path $FilePath -PathType Leaf)) {
+    Write-Host "Error: File does not exist at path $FilePath"
+    exit 1
+}
+
+# Process the file
+Write-Host "Processing file at $FilePath"
