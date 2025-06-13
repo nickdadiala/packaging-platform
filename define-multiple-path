@@ -1,0 +1,16 @@
+# Define multiple file paths
+$Path1 = "C:\Users\Nick\Documents\File1.txt"
+$Path2 = "C:\Users\Nick\Documents\File2.txt"
+$Path3 = "C:\Users\Nick\Documents\File3.txt"
+
+# Store paths in an array
+$FilePaths = @($Path1, $Path2, $Path3)
+
+# Validate each path
+foreach ($FilePath in $FilePaths) {
+    if (-Not (Test-Path -Path $FilePath -PathType Leaf)) {
+        Write-Host "Error: File does not exist at path $FilePath"
+    } else {
+        Write-Host "Processing file at $FilePath"
+    }
+}
