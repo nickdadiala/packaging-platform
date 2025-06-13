@@ -3,6 +3,11 @@ param (
     [ValidateNotNullOrEmpty()]
     [string]$FilePath
 )
+# Check if the file path is null or empty
+if ([string]::IsNullOrEmpty($FilePath)) {
+    Write-Host "Error: FilePath parameter is null or empty."
+    exit 1
+}
 
 # Validate if the file exists
 if (-Not (Test-Path -Path $FilePath -PathType Leaf)) {
