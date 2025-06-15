@@ -20,3 +20,7 @@ git push -u origin main
 # "Install-PreReqs" for installing your prereqs through PS .
 
 # Default script for installing Pre-Reqs without folder path - "INstallscriptNOFolderPAth.ps1"
+
+# Use of silent properties script when you have silent notepad file that needs to go along with install directory.
+CopyItem to Install directory and Run the silent Install script ot load the package.
+
