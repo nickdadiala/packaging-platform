@@ -9,3 +9,10 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\R
 # Set the licensing mode
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\RCM\Licensing Core" `
     -Name "LicensingMode" -Value $licensingMode
+
+# set example of app ArcGIS Pro to address license server details for it. 
+# Set ArcGIS License Server Environment Variable for Current User
+[System.Environment]::SetEnvironmentVariable("ARCGIS_LICENSE_FILE", "27000@yourLicenseServer", "User")
+
+# Optional: Set for All Users (requires admin privileges)
+[System.Environment]::SetEnvironmentVariable("ARCGIS_LICENSE_FILE", "27000@yourLicenseServer", "Machine")   
