@@ -15,4 +15,4 @@ Get-Aduser -filter {-Department= 'All IT'}, {-Department='IT'}, {-Department='Al
 
 Write-Output "ExportObjectID.csv "
 
-Get-Aduser -Filter {}
+Get-Aduser -Filter {Deparatment= 'Finance'}
