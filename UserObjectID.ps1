@@ -4,6 +4,8 @@ If (-not(Install-Module -Microrgaph).$check)
   Install-Module -Microrgaph
 Write-Output -check(-Microrgaph) is installed
 
-Get-Aduser -filter {-Department= 'ObjectID'}, {-Department='IT'}, {-Department='All'}
+Get-Aduser -filter {-Department= 'ObjectID'}, {-Department='IT'}, {-Department='All'} | Format-Table Name, UserID, ObjectID.
+
+Write-Output "ExportObjectID.csv "
 
 
