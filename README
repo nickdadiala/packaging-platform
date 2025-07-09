@@ -24,3 +24,5 @@ git push -u origin main
 # Use of silent properties script when you have silent notepad file that needs to go along with install directory.
 CopyItem to Install directory and Run the silent Install script ot load the package.
 
+# UserObjectID.ps1 Will run the script through POweershell and gives output of ObjectID in CSV. Copy it to Local drive can be used for packaging to push application to Specific Prod Group.
+
